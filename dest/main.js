@@ -49,7 +49,7 @@ function selectstudio() {
 selectstudio();
 function sliderdetail() {
   var elem = document.querySelector(".slider__items-img");
-  var flkty = new Flickity(elem, {
+  var flkty = new Flickity(".slider__items-img", {
     cellAlign: "left",
     contain: true,
     wrapAround: true,
@@ -67,9 +67,10 @@ function sliderdetail() {
     e.preventDefault();
     flkty.next();
   });
-  // var fullscreenbtn = document.querySelector(".fulls");
-  // fullscreenbtn.addEventListener("click", function () {
-  //   flkty.viewFullscreen();
-  // });
+  var btnfullscreen = document.querySelector(".fulls");
+  btnfullscreen.addEventListener("click", function () {
+    console.log(1);
+    flkty.viewFullscreen();
+  });
 }
 sliderdetail();
