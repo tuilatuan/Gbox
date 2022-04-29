@@ -1,0 +1,136 @@
+// css header
+#header {
+  position: relative;
+  .header__top {
+    height: 72px;
+    background: $gay-cl;
+
+    .container {
+      height: 100%;
+      position: relative;
+    }
+    &-logo {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        @include mid;
+        height: 45px;
+        @include xs {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .iconfb {
+        margin-right: 5px;
+      }
+      .btnhiden {
+        opacity: 0;
+        @include transition($t);
+        position: relative;
+        cursor: pointer;
+        pointer-events: auto;
+        span {
+          display: block;
+          width: 22px;
+          height: 2px;
+          background: $yelow-cl;
+          @include transition($t);
+        }
+        &::after,
+        &::before {
+          content: "";
+          background: $yelow-cl;
+          width: 22px;
+          height: 2px;
+          display: flex;
+          margin: 5px 0;
+          @include transition($t);
+        }
+        @include xs {
+          opacity: 1;
+        }
+        &.active {
+          span {
+            display: none;
+            @include transition($t);
+          }
+          &::after {
+            @include transition($t);
+            transform: rotate(46deg) translate(-4px, -5px);
+          }
+          &::before {
+            @include transition($t);
+            transform: rotate(-44deg) translate(-1px, 1px);
+          }
+        }
+      }
+    }
+  }
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px #000 solid;
+    a {
+      font-size: 12px;
+      font-family: pnb;
+      line-height: 30.48px;
+      color: #000;
+      text-transform: uppercase;
+      &:hover {
+        color: $yelow-cl;
+        @include transition($t);
+      }
+    }
+
+    &-past {
+      display: grid;
+      width: 335px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 63px;
+    }
+  }
+  .boderbottom {
+    border-bottom: none;
+  }
+  .nav__mobile {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: $gay-cl;
+    // position: fixed;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // top: 60px;
+    z-index: 2;
+    @include transition($t);
+    a {
+      font-size: 14px;
+      font-family: pnb;
+      line-height: 30.48px;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 5px 10px;
+    }
+    &.active {
+      @include transition($t);
+      display: flex;
+    }
+  }
+  @include xs {
+    .header__top {
+      height: 60px;
+    }
+    .header__nav {
+      display: none;
+    }
+  }
+}

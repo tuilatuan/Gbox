@@ -1,0 +1,364 @@
+.studioretal {
+  background: #f4f4f4;
+}
+.retail {
+  padding-bottom: 80px;
+  .container {
+    display: flex;
+    input,
+    textarea {
+      background: none;
+    }
+    @include xs {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    max-width: 260px;
+    max-height: 640px;
+    padding-top: 73px;
+    padding-left: 20px;
+    padding-right: 70px;
+    background: $gay-cl;
+    .number {
+      width: 120px;
+      height: 120px;
+      @include mid(1);
+      flex-direction: column;
+      background: $yelow-cl;
+      margin-bottom: 27px;
+      span {
+        font-size: 11px;
+        font-family: pnr;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 61.46px;
+        font-family: dinb;
+        line-height: 63.44px;
+        text-transform: uppercase;
+      }
+    }
+    &-item {
+      .title {
+        font-size: 32px;
+        line-height: var(--line-height);
+        letter-spacing: -0.025em;
+        font-family: pne;
+        text-transform: capitalize;
+        color: $white-cl;
+        margin-bottom: 15px;
+      }
+      .name {
+        font-size: 12px;
+        line-height: var(--line-height);
+        font-family: pnr;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $white-cl;
+        margin-bottom: 5px;
+      }
+      .ft,
+      .m,
+      .ml {
+        font-family: pnr;
+        font-size: 14px;
+        line-height: 20px;
+        color: $white-cl;
+      }
+      .ml {
+        display: none;
+      }
+    }
+    @include xs {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      padding-top: 32px;
+      padding-left: 0;
+      padding-right: 0;
+      background: none;
+      .number {
+        width: 104px;
+        height: 104px;
+      }
+      &-item {
+        margin-left: 20px;
+        .title,
+        .name,
+        .ml {
+          color: $black-cl;
+        }
+        .title {
+          margin-bottom: 5px;
+        }
+        .ml {
+          display: block;
+        }
+        .ft,
+        .m {
+          display: none;
+        }
+      }
+    }
+  }
+  &__right {
+    .title {
+      font-size: 28px;
+      font-family: pne;
+      line-height: var(--line-height);
+      color: $retal-title-cl;
+      margin-bottom: 32px;
+    }
+    margin-left: 50px;
+    flex: 1;
+    padding-top: 70px;
+    &-compamny {
+      .form {
+        display: grid;
+        grid-template-columns: 260px 260px;
+        gap: 45px;
+        .formleft,
+        .formright {
+          max-width: 250px;
+          display: flex;
+          flex-direction: column;
+          label {
+            font-size: 12px;
+            line-height: 30px;
+            font-family: pnr;
+            color: $black-cl;
+            text-transform: capitalize;
+          }
+          input {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #000;
+            max-width: 222px;
+          }
+        }
+        .formright {
+          textarea {
+            resize: none;
+            height: 90px;
+            max-width: 220px;
+          }
+        }
+      }
+    }
+    &-booking {
+      display: flex;
+      flex-direction: column;
+      .title {
+        margin-bottom: 5px;
+      }
+      .dotted {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-family: pnr;
+          font-size: 12px;
+          line-height: 66px;
+          text-transform: capitalize;
+        }
+        .dotted-item {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 19px;
+          max-width: 215px;
+          a {
+            @include mid(1);
+            width: 40px;
+            height: 40px;
+            background: #111111;
+            color: #b4b4b4;
+            border: 1px solid $black-cl;
+            font-family: dinb;
+            font-size: 24px;
+            letter-spacing: -0.025em;
+            cursor: pointer;
+            &.active {
+              background: $yelow-cl;
+              color: $black-cl;
+            }
+          }
+        }
+      }
+      .group-textarea {
+        textarea {
+          max-width: 220px;
+          height: 90px;
+          resize: none;
+          outline: none;
+        }
+        display: grid;
+        grid-template-columns: 260px 300px;
+        gap: 45px;
+        .left,
+        .right {
+          display: flex;
+          flex-direction: column;
+        }
+        label {
+          font-size: 12px;
+          line-height: 66px;
+          font-family: pnr;
+        }
+        .right {
+          .text {
+            font-size: 12px;
+            line-height: 24px;
+            font-family: pnr;
+            font-style: italic;
+          }
+        }
+      }
+      .selectdate {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 12px;
+          line-height: 21px;
+          font-family: pnr;
+          margin-bottom: 15px;
+        }
+        .inputseclet {
+          display: flex;
+          align-items: center;
+
+          input {
+            width: 220px;
+            height: 40px;
+            font-family: pnr;
+            font-style: italic;
+            outline: none;
+            font-size: 12px;
+            border: 1px #000 solid;
+          }
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            // display: none;
+            background: url(../img/icon__calender-studiorental.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-right: 12px;
+          }
+          .iconarrow {
+            height: 15px;
+            transform: rotate(-90deg);
+            margin: 0 28px;
+          }
+        }
+      }
+      .infor {
+        display: flex;
+        flex-direction: column;
+        input {
+          max-width: 520px;
+          height: 39px;
+          border: 1px solid $black-cl;
+          outline: none;
+        }
+        label {
+          font-size: 12px;
+          line-height: 51px;
+          font-family: pnr;
+        }
+      }
+    }
+    &-btnbooking {
+      display: flex;
+      margin-top: 68px;
+      .btn {
+        padding: 35px 15px;
+        font-family: pne;
+        font-size: 20px;
+        line-height: var(--line-height);
+        letter-spacing: -0.025em;
+        color: $yelow-cl;
+        text-transform: uppercase;
+        background: $gay-cl;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .text {
+        margin-left: 22px;
+        max-width: 190px;
+        p {
+          font-size: 12px;
+          line-height: 24px;
+          font-family: pnr;
+          span {
+            font-family: pnb;
+          }
+        }
+      }
+    }
+    @include xs {
+      margin-left: 0px;
+      padding-top: 10px;
+      &-compamny {
+        .form {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          .formleft,
+          .formright {
+            max-width: 100%;
+            input {
+              max-width: 100%;
+            }
+          }
+          .formright {
+            margin-bottom: 35px;
+            textarea {
+              resize: none;
+              height: 90px;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+      &-booking {
+        .group-textarea {
+          grid-template-columns: 1fr;
+          gap: 0;
+          margin-bottom: 25px;
+          textarea {
+            max-width: 100%;
+          }
+          .right {
+            .text {
+              display: none;
+            }
+          }
+        }
+        .selectdate {
+          .inputseclet {
+            flex-direction: column;
+            align-items: initial;
+            input {
+              width: 100%;
+            }
+            .iconarrow {
+              transform: rotate(0deg);
+              width: 15px;
+              height: 9px;
+              margin: 0 auto;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      &-btnbooking {
+        margin-top: 40px;
+        .text {
+          max-width: 130px;
+        }
+      }
+    }
+  }
+}

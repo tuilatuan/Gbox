@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Studio</title>
+    <link rel="icon" href="favicon.ico" />
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+
+    <!-- meta facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css" />
+    <link rel="stylesheet" href="dest/fonts.css" />
+  </head>
+
+  <!-- Mỗi body của mỗi page nên có class ví dụ homepage, aboutpage, contactpage... -->
+
+  <body class="contactpage">
+    <!-- HEADER -->
+    <header id="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-logo">
+            <div class="btnhiden">
+              <span></span>
+            </div>
+            <a href="index.html" class="logo"
+              ><img src="./img/logo-box.png" alt=""
+            /></a>
+            <a class="iconfb"><img src="./img/icon-facebook.png" alt="" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="header__nav boderbottom">
+          <div class="header__nav-left">
+            <a href="#">about</a>
+          </div>
+          <div class="header__nav-past">
+            <a href="studio.html">studio</a>
+            <a href="studiorental.html">rental</a>
+            <a href="cafe.html">cafe</a>
+            <a href="allwork.html">work</a>
+          </div>
+          <div class="header__nav-right">
+            <a href="contact.html">contact</a>
+          </div>
+        </nav>
+      </div>
+      <nav class="nav__mobile">
+        <a href="about.html">about</a>
+        <a href="studio.html">studio</a>
+        <a href="studiorental.html">rental</a>
+        <a href="cafe.html">cafe</a>
+        <a href="allwork.html">work</a>
+        <a href="contact.html">contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mainwrapper">
+      <section class="about">
+        <div class="container">
+          <div class="about__content">
+            <h2 class="title">gbox studios</h2>
+            <div class="about__content-text">
+              <p>
+                <span>GBOX STUDIOS</span> aim is to create a full service
+                offering clients the highest quality of work with a
+                comprehensive understanding of modern production, our services
+                include advertising, products, automotive, portraits, beauty,
+                editorial photography and video production. Gbox brand mark was
+                inspired by the brand name and the lens – a visual
+                representation of our world, we aim to create powerful
+                simplicity, all components are coherence based on a box.
+              </p>
+              <p>
+                Gbox is based in Ho Chi Minh City, one of the most beautiful
+                city in Vietnam.
+              </p>
+            </div>
+            <div class="about__content-book">
+              <a href="studiorental.html"
+                ><img src="./img/logo-book-yelow.png" alt=""
+              /></a>
+              <a href="" class="text">If you want booking studios</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__infor">
+          <div class="footer__infor-left">
+            <a class="email" href="mailto:info@goldenboxstudios.com">
+              <span>email</span>
+              <p>info@goldenboxstudios.com</p>
+            </a>
+            <a href="tel:+84 979 872 809" class="phone">
+              <span>tel</span>
+              <p>+84 979 872 809</p>
+            </a>
+            <a href="#" class="address">
+              <span>andress </span>
+              <p>04 bau cat district tan binh ho chi minh city.</p>
+            </a>
+          </div>
+          <div class="footer__infor-right">
+            <div class="right__text">
+              <p>If you have any questions, comments or</p>
+              <p>suggestions, feel free to email us or</p>
+            </div>
+            <form class="right__form">
+              <div class="left">
+                <label for="name">your name</label>
+                <input type="text" name="name" id="name" />
+                <label for="phone">phone</label>
+                <input type="tel" name="phone" id="phone" />
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div class="right">
+                <label for="subject">subject</label>
+                <input type="text" name="subject" id="subject" />
+                <div class="textmessage">
+                  <label for="message">message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    cols="25"
+                    rows="3"
+                    style="line-height: 31.48px"
+                    wrap="OFF"
+                  ></textarea>
+                  <div class="line">
+                    <img src="./img/line-message.png" alt="" />
+                  </div>
+                </div>
+                <button class="btnsend">send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <a class="arrow"><img src="./img/arrowup2xhome.png" alt="" /></a>
+        <div class="p">© 2018 GBOX STUDIO. All rights reserved</div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="dest/main.js"></script>
+  </body>
+</html>

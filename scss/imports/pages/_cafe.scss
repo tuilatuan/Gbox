@@ -1,0 +1,296 @@
+.introcafe {
+  background: url(../img/bg-intro-gallery.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  @include xs {
+    background: url(../img/bg-intro-gallerymobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .container {
+    @include mid(1);
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    padding: 0 120px;
+    padding-top: 55px;
+    padding-bottom: 40px;
+    z-index: 1;
+    @include xs {
+      padding: 0 30px;
+      padding-top: 45px;
+      padding-bottom: 55px;
+    }
+  }
+  &__wel {
+    font-size: 14px;
+    font-family: pnl;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    color: $yellow-cl-title;
+    text-transform: uppercase;
+    max-width: 85px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-size: 20px;
+    font-family: pnb;
+    line-height: var(--line-height);
+    color: $yellow-cl-title;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    @include xs {
+      margin-bottom: 16px;
+    }
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 22px;
+    color: #ebebeb;
+    letter-spacing: -0.025em;
+    font-family: ar;
+    padding-bottom: 50px;
+    @include xs {
+      padding-bottom: 40px;
+    }
+  }
+  &__line {
+    height: 1px;
+    display: block;
+    background: $yellow-cl-title;
+    width: 321px;
+    margin-bottom: 25px;
+    @include xs {
+      width: 100%;
+    }
+  }
+  &__name {
+    color: #eaeae7;
+    font-family: pnl;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+.gallery {
+  background: $bg-gallery;
+  padding-bottom: 75px;
+  &__group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-rows: 200px 200px;
+    position: relative;
+    a {
+      //   height: 0;
+      flex: 1;
+      //   padding-bottom: 64.05%;
+      position: relative;
+      @include transition($t);
+
+      img {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        @include transition($t);
+        transform: scale(1);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &:hover {
+        transform: scale(0.97);
+        @include transition($t);
+        &::after {
+          display: block;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    a:nth-child(1) {
+      height: 100%;
+      grid-area: 1/1/3/2;
+    }
+    a:nth-child(2) {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+    &-full {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      .img {
+        background: $yellow-cl-title;
+        padding: 0 3px;
+        height: 22px;
+        img {
+          width: 15px;
+        }
+      }
+      span {
+        font-size: 12px;
+        line-height: var(--line-height);
+        font-family: pnr;
+        text-transform: capitalize;
+        color: #ffff;
+        margin-left: 10px;
+      }
+    }
+    @include xs {
+      padding-top: 20px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      a {
+        height: 170px;
+        flex: 1;
+        padding-bottom: 64.05%;
+        position: relative;
+        @include transition($t);
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transition($t);
+          transform: translate(-50%, -50%) scale(1);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      a:nth-child(1) {
+        display: none;
+      }
+      a:nth-child(2) {
+        grid-area: auto;
+      }
+      &-full {
+        display: none;
+      }
+    }
+  }
+  &__btnnextprev {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 35px;
+
+      span {
+        font-size: 12px;
+        line-height: var(--line-height);
+        color: $yellow-cl-title;
+        font-family: pnr;
+        text-transform: capitalize;
+      }
+      svg {
+        width: 20px;
+        height: 19px;
+        fill: $yellow-cl-title;
+      }
+      &.prev {
+        position: relative;
+        span {
+          margin-left: 15px;
+          padding-right: 18px;
+        }
+        svg {
+          transform: rotate(90deg);
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 12px;
+          background: $yellow-cl-title;
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      &.next {
+        span {
+          margin-right: 15px;
+          padding-left: 17px;
+        }
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    @include xs {
+      justify-content: center;
+      .btn {
+        margin-top: 25px;
+      }
+    }
+  }
+  @include xs {
+    padding-bottom: 65px;
+  }
+}
+.career {
+  .container {
+    @include mid(1);
+    flex-direction: column;
+    padding-top: 55px;
+    padding-bottom: 95px;
+  }
+  .title {
+    font-family: pnl;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $black-cl;
+    margin-bottom: 15px;
+  }
+  .text {
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.025em;
+    font-family: ar;
+    color: $black-cl;
+    max-width: 450px;
+    text-align: center;
+  }
+  @include xs {
+    .container {
+      padding-top: 35px;
+      padding-bottom: 65px;
+    }
+  }
+}

@@ -1,0 +1,197 @@
+.studio {
+  padding-top: 72px;
+  padding-bottom: 100px;
+  &__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    row-gap: 70px;
+    &-item {
+      // width: 480px;
+      .img {
+        position: relative;
+        height: 0;
+        flex: 1;
+        padding-bottom: 62.5%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%) scale(1));
+          @include transition($t);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background: rgba($color: #000000, $alpha: 0.4);
+          // transform: scaleY(100%);
+          @include transition($t);
+        }
+      }
+      .content {
+        display: flex;
+        height: 118px;
+        &-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-left: 35px;
+          padding-right: 42px;
+          height: 100%;
+          background: $yelow-cl;
+          p {
+            font-family: pnr;
+            font-size: 11;
+            line-height: 20px;
+            color: $black-cl;
+            text-transform: uppercase;
+          }
+          span {
+            font-family: dinb;
+            font-size: 61.46px;
+            line-height: 64.44px;
+            color: $black-cl;
+          }
+        }
+        &-right {
+          display: flex;
+          height: 100%;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+
+          .infor {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding-left: 80px;
+            padding-top: 10px;
+            .name {
+              font-family: pnr;
+              font-size: 12px;
+              line-height: var(--line-height);
+              text-transform: uppercase;
+              color: $black-cl;
+            }
+            p {
+              font-size: 12px;
+              font-family: pnr;
+              line-height: 20px;
+              color: $black-cl;
+            }
+          }
+          .detailarrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-right: 30px;
+            span {
+              font-size: 14px;
+              line-height: 30.48px;
+              font-family: pnsb; //pnsb
+              text-transform: uppercase;
+              color: $black-cl;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        @include xs {
+          &-left {
+            padding: 0 15px;
+            p {
+              font-size: 12px;
+              line-height: 12.49px;
+            }
+            span {
+              font-size: 38.38px;
+              line-height: 43.44px;
+            }
+          }
+          &-right {
+            padding-top: 5px;
+            .infor {
+              padding-left: 40px;
+              padding-top: 0;
+              .name,
+              p {
+                line-height: 19.03px;
+              }
+            }
+            .detailarrow {
+              align-items: flex-start;
+              padding-right: 0;
+              span {
+                display: none;
+              }
+              svg {
+                transform: rotate(-90deg);
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        .img {
+          img {
+            @include transform(translate(-50%, -50%) scale(1.11));
+            @include transition($t);
+          }
+          &::after {
+            top: 100%;
+            bottom: 0;
+            // transform: scaleY(0); //toc do nhanh hon
+            @include transition($t);
+          }
+        }
+        .content {
+          @include transition($t);
+          background: $gay-cl;
+          &-right {
+            .infor {
+              .name,
+              p {
+                color: $white-cl;
+              }
+            }
+            .detailarrow {
+              span {
+                @include transition($t);
+                color: $white-cl;
+              }
+              svg {
+                @include transition($t);
+                fill: $yelow-cl;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      .content {
+        height: 74px;
+      }
+    }
+  }
+  @include xs {
+    padding-top: 30px;
+    padding-bottom: 67px;
+  }
+}

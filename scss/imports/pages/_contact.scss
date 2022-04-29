@@ -1,0 +1,117 @@
+.contact {
+  background: url(../img/img_bg-contact.jpg);
+  //   background-position: center;
+  //   background-attachment: fixed;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  position: relative;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 95px;
+    padding-bottom: 15px;
+    z-index: 2;
+  }
+  &__logo {
+    margin: 0 auto;
+    z-index: 2;
+  }
+  &__infor {
+    z-index: 2;
+    width: max-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+    span,
+    p,
+    a {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: pnr;
+      line-height: var(--line-height);
+      letter-spacing: 0.1em;
+      color: $white-cl;
+    }
+    &-left {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      align-items: flex-end;
+      a {
+        width: 210px;
+      }
+    }
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .email {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+      .phone {
+        span {
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+  &__arrow {
+    margin: 0 auto;
+    z-index: 2;
+
+    img {
+      width: 15px;
+    }
+  }
+  @include xs {
+    background: url(../img/bg-contactmobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container {
+      padding-bottom: 20px;
+    }
+    &__infor {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 20px;
+      margin-bottom: 120px;
+      &-left {
+        order: 2;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      &-right {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        .email {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__logo,
+    &__arrow {
+      display: none;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
